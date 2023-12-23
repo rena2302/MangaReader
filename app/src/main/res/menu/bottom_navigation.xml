@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/btm_nav_manga"
+        android:icon="@drawable/ic_manga_foreground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Manga" />
+    <item
+        android:id="@+id/btm_nav_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/ic_search_foreground"
+        android:title="Search" />
+    <item
+        android:id="@+id/btm_nav_profile"
+        android:icon="@drawable/ic_profile_foreground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Profile" />
+</menu>

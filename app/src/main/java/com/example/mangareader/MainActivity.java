@@ -26,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        replaceFragment(new MangaFragment());
         setContentView(binding.getRoot());
+        replaceFragment(new MangaFragment());
 
         String[] mangaName = {"Manga 1", "Manga 2", "Manga 3", "Manga 4", "Manga 5", "Manga 6", "Manga 7"};
         int[] mangaImage = {R.drawable.ic_manga_foreground,R.drawable.ic_manga_foreground,R.drawable.ic_manga_foreground,R.drawable.ic_manga_foreground,R.drawable.ic_manga_foreground,R.drawable.ic_manga_foreground,R.drawable.ic_manga_foreground,R.drawable.ic_manga_foreground,
                 R.drawable.ic_manga_foreground};
-        GridAdapter gridAdapter = new GridAdapter(mangaName, mangaImage,this,this.getLayoutInflater());
-        mangaItems = (GridView) findViewById(R.id.manga_items);
+        GridAdapter gridAdapter = new GridAdapter(mangaName, mangaImage,MainActivity.this.mangaItems.getContext());
+        mangaItems = findViewById(R.id.manga_items);
         mangaItems.setAdapter(gridAdapter);
         binding.btmNav.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
 
         });
-
-
 
 
     }
